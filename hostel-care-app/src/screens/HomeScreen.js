@@ -2,10 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import ScreenWrapper from '../components/ScreenWrapper';
 import colors from '../utils/colors';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const HomeScreen = ({ navigation }) => {
   return (
     <ScreenWrapper>
+    <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.logo}>HostelCare</Text>
@@ -48,6 +50,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+      </ScrollView>
     </ScreenWrapper>
   );
 };
@@ -56,6 +59,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    marginBottom: 40,
   },
   header: {
     alignItems: 'center',
