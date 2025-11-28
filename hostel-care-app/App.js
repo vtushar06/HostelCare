@@ -1,20 +1,12 @@
+import { View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import ComplaintsListScreen from './screens/ComplaintsListScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';  // ⭐ REQUIRED
-
-const Tab = createBottomTabNavigator();   // ⭐ CREATE TAB
 
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <Tab.Navigator>
-    //     <Tab.Screen name="Complaints" component={ComplaintsListScreen} />
-    //   </Tab.Navigator>
-    // </NavigationContainer>
-    <View>
-      <Text>My app</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>HostelCare App</Text>
+      <Text style={styles.subtext}>Ready for development!</Text>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -25,5 +17,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  subtext: {
+    fontSize: 16,
+    color: '#666',
   },
 });
