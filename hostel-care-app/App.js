@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import ComplaintsListScreen from './screens/ComplaintsListScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';  // ⭐ REQUIRED
+
+const Tab = createBottomTabNavigator();   // ⭐ CREATE TAB
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    // <NavigationContainer>
+    //   <Tab.Navigator>
+    //     <Tab.Screen name="Complaints" component={ComplaintsListScreen} />
+    //   </Tab.Navigator>
+    // </NavigationContainer>
+    <View>
+      <Text>My app</Text>
     </View>
   );
 }
