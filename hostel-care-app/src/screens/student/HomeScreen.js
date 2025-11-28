@@ -51,7 +51,7 @@ const StudentHomeScreen = ({ navigation }) => {
       >
         <View style={styles.header}>
           <View>
-            <Text style={styles.greeting}>Welcome, Student</Text>
+            <Text style={styles.greeting}>Welcome, {currentUser?.name || 'Student'}</Text>
             <Text style={styles.subGreeting}>Manage your hostel complaints</Text>
           </View>
         </View>
@@ -89,7 +89,7 @@ const StudentHomeScreen = ({ navigation }) => {
           
           <TouchableOpacity
             style={styles.actionCard}
-            onPress={() => navigation.navigate('MyComplaints')}
+            onPress={() => navigation.navigate('MyComplaintsNav')}
             activeOpacity={0.7}
           >
             <View style={styles.actionCardContent}>
@@ -107,7 +107,7 @@ const StudentHomeScreen = ({ navigation }) => {
           
           <TouchableOpacity
             style={styles.actionCard}
-            onPress={() => navigation.navigate('BrowseComplaints')}
+            onPress={() => navigation.navigate('BrowseComplaintsNav')}
             activeOpacity={0.7}
           >
             <View style={styles.actionCardContent}>

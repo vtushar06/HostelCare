@@ -18,8 +18,20 @@ const HomeStack = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="StudentHome" component={StudentHomeScreen} />
     <Stack.Screen name="AddComplaint" component={AddComplaintScreen} />
-    <Stack.Screen name="MyComplaints" component={MyComplaintsScreen} />
-    <Stack.Screen name="BrowseComplaints" component={BrowseComplaintsScreen} />
+    <Stack.Screen name="ComplaintDetail" component={ComplaintDetailScreen} />
+  </Stack.Navigator>
+);
+
+const MyComplaintsStack = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="MyComplaintsTab" component={MyComplaintsScreen} />
+    <Stack.Screen name="ComplaintDetail" component={ComplaintDetailScreen} />
+  </Stack.Navigator>
+);
+
+const BrowseComplaintsStack = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="BrowseComplaintsTab" component={BrowseComplaintsScreen} />
     <Stack.Screen name="ComplaintDetail" component={ComplaintDetailScreen} />
   </Stack.Navigator>
 );
@@ -53,6 +65,26 @@ const StudentTabs = () => {
           tabBarLabel: 'Home',
         }}
       />
+
+      <Tab.Screen
+        name="MyComplaintsNav"
+        component={MyComplaintsStack}
+        options={{
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 24 }}>📝</Text>,
+          tabBarLabel: 'My Complaints',
+        }}
+      />
+
+      <Tab.Screen
+        name="BrowseComplaintsNav"
+        component={BrowseComplaintsStack}
+        options={{
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 24 }}>🔍</Text>,
+          tabBarLabel: 'Browse',
+        }}
+      />
+
+      
     </Tab.Navigator>
   );
 };
